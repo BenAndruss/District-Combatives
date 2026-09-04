@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>District Combatives | Close-Quarters Training in Washington, D.C.</title>
+<meta name="description" content="District Combatives — simple, reliable combative techniques built for high-stress situations. Established 2016. Washington, D.C. Site coming soon.">
+<link rel="canonical" href="https://districtcombatives.com/">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #15181A;
+    --bg-panel: #1B1F22;
+    --line: #2A2F33;
+    --text: #E7E5E0;
+    --text-dim: #9195A0;
+    --iron: #A8391F;
+    --iron-dim: #6B2814;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+  }
+
+  a { color: inherit; }
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity: 0.16;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 900px 600px at 50% 30%, rgba(168,57,31,0.10), transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero > * { position: relative; z-index: 1; }
+
+  .mark {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 36px;
+  }
+
+  .mark svg { width: 100%; height: 100%; }
+
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2.6rem, 8vw, 5rem);
+    letter-spacing: 0.01em;
+    line-height: 0.98;
+    text-transform: uppercase;
+  }
+
+  h1 span { display: block; color: var(--iron); }
+
+  .tagline {
+    margin-top: 20px;
+    max-width: 520px;
+    font-size: 1.05rem;
+    color: var(--text-dim);
+  }
+
+  .status {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  .status .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--iron);
+    animation: pulse 2.4s infinite;
+  }
+
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(168,57,31,0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(168,57,31,0); }
+    100% { box-shadow: 0 0 0 0 rgba(168,57,31,0); }
+  }
+
+  .scroll-cue {
+    margin-top: 56px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    opacity: 0.7;
+  }
+
+  /* ---------- SECTIONS ---------- */
+
+  section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 24px;
+    border-top: 1px solid var(--line);
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--iron);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    margin-bottom: 24px;
+  }
+
+  p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    margin-bottom: 16px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  .specialty-line {
+    color: var(--text);
+    font-size: 1.05rem;
+    border-left: 2px solid var(--iron);
+    padding-left: 18px;
+  }
+
+  .founder-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 32px;
+  }
+
+  .founder-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin-bottom: 4px;
+  }
+
+  .founder-title {
+    font-size: 0.85rem;
+    color: var(--iron);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .founder-card p {
+    font-size: 0.96rem;
+  }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+
+  footer {
+    text-align: center;
+    padding: 56px 24px 44px;
+    border-top: 1px solid var(--line);
+  }
+
+  footer .label {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+  }
+
+  footer a.email {
+    display: inline-block;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--iron-dim);
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  footer a.email:hover {
+    border-color: var(--iron);
+    color: var(--iron);
+  }
+
+  footer .location {
+    margin-top: 18px;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+  }
+
+  @media (max-width: 480px) {
+    section { padding: 56px 20px; }
+    .founder-card { padding: 24px; }
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--iron);
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="mark" aria-hidden="true">
+    <svg viewBox="0 0 34 34" fill="none">
+      <path d="M17 2L30 9V25L17 32L4 25V9L17 2Z" stroke="#A8391F" stroke-width="1.4"/>
+      <path d="M17 9L23 12.5V19.5L17 23L11 19.5V12.5L17 9Z" stroke="#9195A0" stroke-width="1.2"/>
+    </svg>
+  </div>
+
+  <h1>District<span>Combatives</span></h1>
+
+  <p class="tagline">
+    Simple, reliable combative technique — the kind that's still there when everything else under duress isn't.
+  </p>
+
+  <div class="status">
+    <span class="dot"></span>
+    <span>Site coming soon — Washington, D.C.</span>
+  </div>
+
+  <div class="scroll-cue">Scroll to learn more ↓</div>
+</div>
+
+<section>
+  <div class="eyebrow">History</div>
+  <h2>Established 2016</h2>
+  <p>
+    The goal was not to just reach your potential but to build it — to make things possible that were not possible before. We were not a traditional martial arts school. We were not a boxing gym. We were not a choreographed group exercise class. We were a training ground.
+  </p>
+  <p>
+    You sweated. You experienced pain. You were challenged. Pushed. And you failed. And you prevailed. Not every time. But sometimes. And this — this line between fail and prevail — is where expertise lives. It is here you built expertise. It is here you made things possible that were not possible before.
+  </p>
+</section>
+
+<section>
+  <div class="eyebrow">Specialties</div>
+  <h2>What We Train</h2>
+  <p class="specialty-line">
+    District Combatives is focused on the development of simple, reliable combative techniques that are easily recalled when under duress.
+  </p>
+</section>
+
+<section>
+  <div class="eyebrow">Meet the Founder</div>
+  <h2>Ben Andruss</h2>
+  <div class="founder-card">
+    <div class="founder-name">Benjamin Andruss</div>
+    <div class="founder-title">Founder &amp; Chief Instructor</div>
+    <p>
+      Also known as Ben Drader or Ben Forte, Benjamin Andruss brings over 15 years of experience in martial arts, self-defense, and combatives, developed primarily through self-instruction and supplemented by over four hours of formal instruction during Basic Training.
+    </p>
+    <p>
+      Formerly the Chief Defensive Tactics Instructor at DC Self Defense, he has studied Krav Maga — for which he claims a Black Belt — along with Jiu-Jitsu, Muay Thai, Spontaneous Protection Enabling Accelerated Response (SPEAR), and the Special Combat Aggressive Reactionary System (SCARS).
+    </p>
+    <p>
+      Ben served in the U.S. Army from 1998 to 2000 as an Ammunition Specialist, deploying to Bosnia, where he earned awards and commendations. He studied at a bookstore near Harvard University, and has worked in the general vicinity of two National Security Advisors, a Secretary of State, a Director of the CIA, and a Prince.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="label">Inquiries</div>
+  <a class="email" href="mailto:benandruss@districtcombatives.com">benandruss@districtcombatives.com</a>
+  <div class="location">Washington, D.C.</div>
+</footer>
+
+</body>
+</html>

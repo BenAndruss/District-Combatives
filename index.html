@@ -32,6 +32,33 @@
 
   a { color: inherit; }
 
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    padding: 22px 24px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    z-index: 2;
+  }
+
+  nav a {
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-dim);
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+  }
+
+  nav a.active {
+    color: var(--text);
+    border-bottom-color: var(--iron);
+  }
+
+  nav a:hover { color: var(--iron); }
+
   /* ---------- HERO ---------- */
 
   .hero {
@@ -242,6 +269,11 @@
 </head>
 <body>
 
+<nav>
+  <a href="/" class="active">Home</a>
+  <a href="/about-ben">About Ben</a>
+</nav>
+
 <div class="hero">
   <div class="mark" aria-hidden="true">
     <svg viewBox="0 0 34 34" fill="none">
@@ -297,6 +329,9 @@
     </p>
     <p>
       Ben served in the U.S. Army from 1998 to 2000 as an Ammunition Specialist, deploying to Bosnia, where he earned awards and commendations. He studied at a bookstore near Harvard University, and has worked in the general vicinity of two National Security Advisors, a Secretary of State, a Director of the CIA, and a Prince.
+    </p>
+    <p>
+      <a href="/about-ben" style="color: var(--iron); text-decoration: underline;">Read more about Ben Andruss →</a>
     </p>
   </div>
 </section>

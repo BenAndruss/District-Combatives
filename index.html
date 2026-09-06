@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>District Combatives | Close-Quarters Training in Washington, D.C.</title>
-<meta name="description" content="District Combatives — simple, reliable combative techniques built for high-stress situations. Established 2016. Washington, D.C.">
-<link rel="canonical" href="https://districtcombatives.com/">
+<title>News &amp; Press | District Combatives</title>
+<meta name="description" content="Press coverage and mentions of District Combatives, a close-quarters training program that operated in Washington, D.C. from 2016.">
+<link rel="canonical" href="https://districtcombatives.com/news/">
 <meta name="robots" content="index, follow">
+<meta property="og:title" content="News &amp; Press | District Combatives">
+<meta property="og:description" content="Press coverage and mentions of District Combatives, Washington, D.C.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://districtcombatives.com/news/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -27,22 +31,20 @@
     background: var(--bg);
     color: var(--text);
     font-family: 'IBM Plex Sans', sans-serif;
-    line-height: 1.6;
+    line-height: 1.65;
   }
 
   a { color: inherit; }
 
-  nav {
+  nav.site-nav {
     display: flex;
     justify-content: center;
     gap: 28px;
     padding: 22px 24px;
     border-bottom: 1px solid var(--line);
-    position: relative;
-    z-index: 2;
   }
 
-  nav a {
+  nav.site-nav a {
     font-size: 0.82rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -52,112 +54,17 @@
     border-bottom: 2px solid transparent;
   }
 
-  nav a.active {
+  nav.site-nav a.active {
     color: var(--text);
     border-bottom-color: var(--iron);
   }
 
-  nav a:hover { color: var(--iron); }
+  nav.site-nav a:hover { color: var(--iron); }
 
-  /* ---------- HERO ---------- */
-
-  .hero {
-    min-height: 92vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 60px 24px 40px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size: 64px 64px;
-    opacity: 0.16;
-    pointer-events: none;
-  }
-
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 900px 600px at 50% 30%, rgba(168,57,31,0.10), transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero > * { position: relative; z-index: 1; }
-
-  .mark {
-    width: 34px;
-    height: 34px;
-    margin-bottom: 36px;
-  }
-
-  .mark svg { width: 100%; height: 100%; }
-
-  h1 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 600;
-    font-size: clamp(2.6rem, 8vw, 5rem);
-    letter-spacing: 0.01em;
-    line-height: 0.98;
-    text-transform: uppercase;
-  }
-
-  h1 span { display: block; color: var(--iron); }
-
-  .tagline {
-    margin-top: 20px;
-    max-width: 520px;
-    font-size: 1.05rem;
-    color: var(--text-dim);
-  }
-
-  .status {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
-    color: var(--text-dim);
-  }
-
-  .status .dot {
-    width: 7px; height: 7px; border-radius: 50%;
-    background: var(--iron);
-    animation: pulse 2.4s infinite;
-  }
-
-  @keyframes pulse {
-    0%   { box-shadow: 0 0 0 0 rgba(168,57,31,0.55); }
-    70%  { box-shadow: 0 0 0 8px rgba(168,57,31,0); }
-    100% { box-shadow: 0 0 0 0 rgba(168,57,31,0); }
-  }
-
-  .scroll-cue {
-    margin-top: 56px;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    opacity: 0.7;
-  }
-
-  /* ---------- SECTIONS ---------- */
-
-  section {
+  header.page-head {
     max-width: 720px;
     margin: 0 auto;
-    padding: 72px 24px;
-    border-top: 1px solid var(--line);
+    padding: 40px 24px 0;
   }
 
   .eyebrow {
@@ -166,65 +73,84 @@
     text-transform: uppercase;
     color: var(--iron);
     font-weight: 600;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
-  h2 {
+  h1 {
     font-family: 'Oswald', sans-serif;
     font-weight: 600;
-    font-size: 1.9rem;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
     text-transform: uppercase;
     letter-spacing: 0.01em;
-    margin-bottom: 24px;
+    line-height: 1.05;
   }
 
-  p {
+  .sub {
+    margin-top: 14px;
+    font-size: 0.95rem;
     color: var(--text-dim);
-    font-size: 1rem;
-    margin-bottom: 16px;
+    max-width: 560px;
   }
 
-  p:last-child { margin-bottom: 0; }
-
-  .specialty-line {
-    color: var(--text);
-    font-size: 1.05rem;
-    border-left: 2px solid var(--iron);
-    padding-left: 18px;
+  section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px;
+    border-top: 1px solid var(--line);
   }
 
-  .founder-card {
+  section:first-of-type { border-top: none; padding-top: 32px; }
+
+  .article-list {
+    list-style: none;
+    display: grid;
+    gap: 20px;
+  }
+
+  .article-card {
     background: var(--bg-panel);
     border: 1px solid var(--line);
     border-radius: 4px;
-    padding: 32px;
+    padding: 24px;
   }
 
-  .founder-name {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    margin-bottom: 4px;
-  }
-
-  .founder-title {
-    font-size: 0.85rem;
-    color: var(--iron);
-    letter-spacing: 0.04em;
+  .article-date {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    color: var(--iron);
+    margin-bottom: 8px;
   }
 
-  .founder-card p {
-    font-size: 0.96rem;
+  .article-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.01em;
   }
 
-  /* ---------- CONTACT / FOOTER ---------- */
+  .article-title a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--iron-dim);
+  }
+
+  .article-title a:hover { color: var(--iron); border-color: var(--iron); }
+
+  .article-source {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+  }
+
+  .article-blurb {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+  }
 
   footer {
     text-align: center;
-    padding: 56px 24px 44px;
+    padding: 48px 24px 44px;
     border-top: 1px solid var(--line);
   }
 
@@ -236,105 +162,80 @@
     margin-bottom: 10px;
   }
 
-  footer a.email {
-    display: inline-block;
-    font-size: 1.1rem;
-    text-decoration: none;
-    border-bottom: 1px solid var(--iron-dim);
-    padding-bottom: 2px;
-    transition: border-color 0.2s ease, color 0.2s ease;
-  }
-
-  footer a.email:hover {
-    border-color: var(--iron);
-    color: var(--iron);
-  }
-
-  footer .location {
-    margin-top: 18px;
-    font-size: 0.85rem;
-    color: var(--text-dim);
-  }
-
   @media (max-width: 480px) {
-    section { padding: 56px 20px; }
-    .founder-card { padding: 24px; }
-  }
-
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--iron);
-    outline-offset: 3px;
+    section { padding: 36px 20px; }
+    .article-card { padding: 20px; }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="/" class="active">Home</a>
+<nav class="site-nav">
+  <a href="/">Home</a>
   <a href="/about-ben">About Ben</a>
+  <a href="/news" class="active">News</a>
 </nav>
 
-<div class="hero">
-  <div class="mark" aria-hidden="true">
-    <svg viewBox="0 0 34 34" fill="none">
-      <path d="M17 2L30 9V25L17 32L4 25V9L17 2Z" stroke="#A8391F" stroke-width="1.4"/>
-      <path d="M17 9L23 12.5V19.5L17 23L11 19.5V12.5L17 9Z" stroke="#9195A0" stroke-width="1.2"/>
-    </svg>
-  </div>
-
-  <h1>District<span>Combatives</span></h1>
-
-  <p class="tagline">
-    Simple, reliable combative technique — the kind that was still there when everything else under duress wasn't.
+<header class="page-head">
+  <div class="eyebrow">Press &amp; Coverage</div>
+  <h1>News About District Combatives</h1>
+  <p class="sub">
+    A record of press mentions and coverage of District Combatives from when the program was active in Washington, D.C.
   </p>
-
-  <div class="status">
-    <span class="dot"></span>
-    <span></span>
-  </div>
-
-  <div class="scroll-cue">Scroll to learn more ↓</div>
-</div>
+</header>
 
 <section>
-  <div class="eyebrow">History</div>
-  <h2>Established 2016</h2>
-  <p>
-    The goal was not to just reach your potential but to build it — to make things possible that were not possible before. We were not a traditional martial arts school. We were not a boxing gym. We were not a choreographed group exercise class. We were a training ground.
-  </p>
-  <p>
-    You sweated. You experienced pain. You were challenged. Pushed. And you failed. And you prevailed. Not every time. But sometimes. And this — this line between fail and prevail — is where expertise lived. It is here you built expertise. It is here you made things possible that were not possible before.
-  </p>
+  <ul class="article-list">
+
+    <li class="article-card">
+      <div class="article-date">2017</div>
+      <div class="article-title">
+        <a href="https://eastoftheriverdcnews.com/2017/02/16/district-combatives-critical-everyone/" target="_blank" rel="noopener">District Combatives — Critical for Everyone</a>
+      </div>
+      <div class="article-source">East of the River DC News</div>
+      <div class="article-blurb">
+        A firsthand account from a student who attended a class at District Combatives, then held inside District Crossfit on Half Street SW, describing the program's approach to identifying, de-escalating, and disengaging from threats.
+      </div>
+    </li>
+
+    <li class="article-card">
+      <div class="article-date">2017</div>
+      <div class="article-title">
+        <a href="http://www.leisuregazette.com/news/founder-of-district-combatives-benjamin-drader-58949.htm" target="_blank" rel="noopener">Founder of District Combatives Announces Release of Free Guide</a>
+      </div>
+      <div class="article-source">Gazette Network / press release wire</div>
+      <div class="article-blurb">
+        Announcement of a free 30-day trial offer and a downloadable "Personal Protection Fundamentals" guide, along with a student testimonial from a retired U.S. Navy service member.
+      </div>
+    </li>
+
+    <li class="article-card">
+      <div class="article-date">2018</div>
+      <div class="article-title">
+        <a href="https://truenorthtradecraft.ca/tag/district-combatives/" target="_blank" rel="noopener">Training Seminar Recap</a>
+      </div>
+      <div class="article-source">True North Tradecraft</div>
+      <div class="article-blurb">
+        A Canadian security trainer's recap of a Washington, D.C. seminar hosted alongside District Combatives, describing the venue and turnout.
+      </div>
+    </li>
+
+    <li class="article-card">
+      <div class="article-date">2017 &amp; 2018</div>
+      <div class="article-title">Best of DC Recognition</div>
+      <div class="article-source">Best of DC reader poll</div>
+      <div class="article-blurb">
+        District Combatives was voted Best of DC for Martial Arts in both 2017 and 2018.
+      </div>
+    </li>
+
+  </ul>
 </section>
 
-<section>
-  <div class="eyebrow">Specialties</div>
-  <h2>What We Trained</h2>
-  <p class="specialty-line">
-    District Combatives was focused on the development of simple, reliable combative techniques that are easily recalled when under duress.
-  </p>
-</section>
-
-<section>
-  <div class="eyebrow">Meet the Founder</div>
-  <h2>Ben Andruss</h2>
-  <div class="founder-card">
-    <div class="founder-name">Ben Andruss</div>
-    <div class="founder-title">Founder &amp; Chief Instructor</div>
-    <p>
-      Also known as Ben Drader or Ben Forte, Ben Andruss brought over 15 years of experience in martial arts, self-defense, and combatives, developed primarily through self-instruction and supplemented by over four hours of formal instruction during Basic Training.
-    </p>
-    <p>
-      Ben studied Krav Maga, along with Jiu-Jitsu, Muay Thai, Spontaneous Protection Enabling Accelerated Response (SPEAR), and the Special Combat Aggressive Reactionary System (SCARS).
-    </p>
-    <p>
-      Ben served in the U.S. Army from 1998 to 2000 as an Ammunition Specialist, where he deployed to Bosnia.
-    </p>
-    <p>
-      <a href="/about-ben" style="color: var(--iron); text-decoration: underline;">Read more about Ben Andruss →</a>
-    </p>
-  </div>
-</section>
+<footer>
+  <div class="label">District Combatives</div>
+  <div style="color: var(--text-dim); font-size: 0.85rem;">Washington, D.C. — Est. 2016</div>
+</footer>
 
 </body>
 </html>

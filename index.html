@@ -17,8 +17,19 @@
     --line: #2A2F33;
     --text: #E7E5E0;
     --text-dim: #9195A0;
-    --iron: #A8391F;
-    --iron-dim: #6B2814;
+
+    --red: #E40303;
+    --orange: #FF8C00;
+    --yellow: #FFED00;
+    --green: #008026;
+    --blue: #004DFF;
+    --purple: #750787;
+
+    --pride-gradient: linear-gradient(90deg, var(--red), var(--orange), var(--yellow), var(--green), var(--blue), var(--purple));
+
+    /* legacy alias so existing rules keep working */
+    --iron: var(--orange);
+    --iron-dim: var(--purple);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,6 +42,26 @@
   }
 
   a { color: inherit; }
+
+  .pride-bar {
+    height: 6px;
+    width: 100%;
+    background: var(--pride-gradient);
+  }
+
+  .pride-flag-corner {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    width: 44px;
+    height: 30px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    z-index: 50;
+  }
+
+  .pride-flag-corner svg { display: block; width: 100%; height: 100%; }
 
   nav {
     display: flex;
@@ -50,14 +81,17 @@
     color: var(--text-dim);
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
+    transition: color 0.2s ease;
   }
 
   nav a.active {
     color: var(--text);
-    border-bottom-color: var(--iron);
+    border-image: var(--pride-gradient) 1;
+    border-bottom: 2px solid;
+    border-image-slice: 1;
   }
 
-  nav a:hover { color: var(--iron); }
+  nav a:hover { color: var(--orange); }
 
   /* ---------- HERO ---------- */
 
@@ -89,7 +123,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 900px 600px at 50% 30%, rgba(168,57,31,0.10), transparent 70%);
+    background: radial-gradient(ellipse 900px 600px at 50% 30%, rgba(117,7,135,0.16), transparent 70%);
     pointer-events: none;
   }
 
@@ -112,7 +146,20 @@
     text-transform: uppercase;
   }
 
-  h1 span { display: block; color: var(--iron); }
+  h1 span {
+    display: block;
+    background: var(--pride-gradient);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
 
   .tagline {
     margin-top: 20px;
@@ -132,14 +179,14 @@
 
   .status .dot {
     width: 7px; height: 7px; border-radius: 50%;
-    background: var(--iron);
+    background: var(--pride-gradient);
     animation: pulse 2.4s infinite;
   }
 
   @keyframes pulse {
-    0%   { box-shadow: 0 0 0 0 rgba(168,57,31,0.55); }
-    70%  { box-shadow: 0 0 0 8px rgba(168,57,31,0); }
-    100% { box-shadow: 0 0 0 0 rgba(168,57,31,0); }
+    0%   { box-shadow: 0 0 0 0 rgba(117,7,135,0.55); }
+    70%  { box-shadow: 0 0 0 8px rgba(117,7,135,0); }
+    100% { box-shadow: 0 0 0 0 rgba(117,7,135,0); }
   }
 
   .scroll-cue {
@@ -164,10 +211,13 @@
     font-size: 0.78rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--iron);
     font-weight: 600;
     margin-bottom: 16px;
   }
+
+  section:nth-of-type(1) .eyebrow { color: var(--red); }
+  section:nth-of-type(2) .eyebrow { color: var(--green); }
+  section:nth-of-type(3) .eyebrow { color: var(--blue); }
 
   h2 {
     font-family: 'Oswald', sans-serif;
@@ -189,13 +239,16 @@
   .specialty-line {
     color: var(--text);
     font-size: 1.05rem;
-    border-left: 2px solid var(--iron);
+    border-left: 3px solid transparent;
+    border-image: var(--pride-gradient) 1;
     padding-left: 18px;
   }
 
   .founder-card {
     background: var(--bg-panel);
     border: 1px solid var(--line);
+    border-top: 3px solid transparent;
+    border-image: var(--pride-gradient) 1;
     border-radius: 4px;
     padding: 32px;
   }
@@ -210,7 +263,7 @@
 
   .founder-title {
     font-size: 0.85rem;
-    color: var(--iron);
+    color: var(--blue);
     letter-spacing: 0.04em;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -240,14 +293,14 @@
     display: inline-block;
     font-size: 1.1rem;
     text-decoration: none;
-    border-bottom: 1px solid var(--iron-dim);
+    border-bottom: 1px solid var(--purple);
     padding-bottom: 2px;
     transition: border-color 0.2s ease, color 0.2s ease;
   }
 
   footer a.email:hover {
-    border-color: var(--iron);
-    color: var(--iron);
+    border-color: var(--orange);
+    color: var(--orange);
   }
 
   footer .location {
@@ -262,12 +315,25 @@
   }
 
   a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--iron);
+    outline: 2px solid var(--orange);
     outline-offset: 3px;
   }
 </style>
 </head>
 <body>
+
+<div class="pride-bar" aria-hidden="true"></div>
+
+<div class="pride-flag-corner" aria-hidden="true">
+  <svg viewBox="0 0 60 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <rect y="0"  width="60" height="6.67" fill="#E40303"/>
+    <rect y="6.67" width="60" height="6.67" fill="#FF8C00"/>
+    <rect y="13.33" width="60" height="6.67" fill="#FFED00"/>
+    <rect y="20" width="60" height="6.67" fill="#008026"/>
+    <rect y="26.67" width="60" height="6.67" fill="#004DFF"/>
+    <rect y="33.33" width="60" height="6.67" fill="#750787"/>
+  </svg>
+</div>
 
 <nav>
   <a href="/" class="active">Home</a>
@@ -278,15 +344,15 @@
 <div class="hero">
   <div class="mark" aria-hidden="true">
     <svg viewBox="0 0 34 34" fill="none">
-      <path d="M17 2L30 9V25L17 32L4 25V9L17 2Z" stroke="#A8391F" stroke-width="1.4"/>
-      <path d="M17 9L23 12.5V19.5L17 23L11 19.5V12.5L17 9Z" stroke="#9195A0" stroke-width="1.2"/>
+      <path d="M17 2L30 9V25L17 32L4 25V9L17 2Z" stroke="#FF8C00" stroke-width="1.4"/>
+      <path d="M17 9L23 12.5V19.5L17 23L11 19.5V12.5L17 9Z" stroke="#750787" stroke-width="1.2"/>
     </svg>
   </div>
 
   <h1>District<span>Combatives</span></h1>
 
   <p class="tagline">
-    Simple, reliable combative technique — the kind that was still there when everything else under duress wasn't.
+    Simple, reliable combative technique — the kind that was still there when everything else under duress wasn't. From DC to the Pacific Northwest, the lessons live on, with PRIDE.
   </p>
 
   <div class="status">
@@ -332,7 +398,7 @@
       Ben served in the U.S. Army from 1998 to 2000 as an Ammunition Specialist, where he deployed to Bosnia.
     </p>
     <p>
-      <a href="/about-ben" style="color: var(--iron); text-decoration: underline;">Read more about Ben Andruss →</a>
+      <a href="/about-ben" style="color: var(--orange); text-decoration: underline;">Read more about Ben Andruss →</a>
     </p>
   </div>
 </section>

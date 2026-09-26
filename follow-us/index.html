@@ -21,6 +21,39 @@
 
   * { box-sizing: border-box; }
 
+  body { margin: 0; background: var(--bg); }
+
+  /* ---- Site navigation ---- */
+  nav {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    padding: 20px 24px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    font-family: 'Barlow', -apple-system, sans-serif;
+  }
+
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  nav a:hover,
+  nav a:focus-visible {
+    color: var(--text);
+  }
+
+  nav a.active {
+    color: var(--text);
+    border-bottom-color: var(--accent);
+  }
+
   /* ---- This wrapper section is what you paste into your site as a "tab"/section ---- */
   .social-follow {
     background: var(--bg);
@@ -123,6 +156,13 @@
 </style>
 </head>
 <body>
+
+<nav>
+  <a href="/">Home</a>
+  <a href="/about-ben">About Ben</a>
+  <a href="/news">News</a>
+  <a href="/follow-us" class="active">Follow Us</a>
+</nav>
 
 <section class="social-follow" aria-labelledby="follow-us-heading">
   <div class="social-follow__inner">

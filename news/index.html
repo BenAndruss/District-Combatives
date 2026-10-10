@@ -101,6 +101,32 @@
 
   section:first-of-type { border-top: none; padding-top: 32px; }
 
+  .featured-clip {
+    margin-bottom: 44px;
+  }
+
+  .featured-clip img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+  }
+
+  .featured-clip figcaption {
+    margin-top: 10px;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+  }
+
+  .featured-clip figcaption .source {
+    color: var(--iron);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+
   .article-list {
     list-style: none;
     display: grid;
@@ -186,6 +212,14 @@
 </header>
 
 <section>
+
+  <figure class="featured-clip">
+    <img src="/assets/news/ben-andruss-drader-forte-article.jpeg" alt="Local press article about District Combatives">
+    <figcaption>
+      Check out this article about District Combatives from the local press.
+    </figcaption>
+  </figure>
+
   <ul class="article-list">
 
     <li class="article-card">
@@ -206,7 +240,7 @@
       </div>
       <div class="article-source">Justia</div>
       <div class="article-blurb">
-        Opportunties Development Group, LLC, Plantiff, v. Benjamin Lee Andruss, Defendant: The Magistrate Judge recommended that plaintiff be awarded a default judgment in the amount of $341,436.61 in compensatory damages plus the reasonable attorney's fees and costs associated with plaintiff's unsuccessful efforts to pursue discovery from defendant. 
+        Opportunties Development Group, LLC, Plantiff, v. Benjamin Lee Andruss, Defendant: The Magistrate Judge recommended that plaintiff be awarded a default judgment in the amount of $341,436.61 in compensatory damages plus the reasonable attorney's fees and costs associated with plaintiff's unsuccessful efforts to pursue discovery from defendant.
       </div>
     </li>
 
